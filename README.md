@@ -67,3 +67,4 @@ Pull it with:
 ```bash
 docker pull YOUR_DOCKERHUB_USERNAME/devops-webapp:latest
 ```
+#docker credentials added in secrets
