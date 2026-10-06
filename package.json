@@ -1,0 +1,13 @@
+{
+  "name": "devops-docker-webapp",
+  "version": "1.0.0",
+  "description": "Simple Node.js web application for Docker and GitHub Actions practice",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

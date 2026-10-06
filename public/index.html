@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Docker Web App</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <p class="tag">DEVOPS PRACTICE PROJECT</p>
+      <h1>Docker + GitHub Actions</h1>
+      <p class="subtitle">
+        This Node.js application is containerized with Docker and automatically
+        built and pushed to Docker Hub using GitHub Actions.
+      </p>
+
+      <div class="grid">
+        <div class="item"><strong>Application</strong><span>Node.js + Express</span></div>
+        <div class="item"><strong>Container</strong><span>Docker</span></div>
+        <div class="item"><strong>CI/CD</strong><span>GitHub Actions</span></div>
+        <div class="item"><strong>Registry</strong><span>Docker Hub</span></div>
+      </div>
+
+      <button onclick="checkHealth()">Check API Health</button>
+      <p id="result"></p>
+    </div>
+  </main>
+
+  <script>
+    async function checkHealth() {
+      const result = document.getElementById("result");
+      result.textContent = "Checking...";
+      try {
+        const response = await fetch("/api/health");
+        const data = await response.json();
+        result.textContent = `Status: ${data.status}`;
+      } catch (error) {
+        result.textContent = "API check failed";
+      }
+    }
+  </script>
+</body>
+</html>
