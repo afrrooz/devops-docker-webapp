@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/afrrooz/devops-docker-webapp.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t afrrooz/devops-webapp:latest .'
